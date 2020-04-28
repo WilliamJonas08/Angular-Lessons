@@ -1,0 +1,6 @@
+<div class="songs">
+    <app-song-list
+    [list]="favourites$ | async" (toggle)="onToggle($event)">
+        Plants Watered
+    </app-song-list>
+</div>

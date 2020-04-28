@@ -1,0 +1,10 @@
+<div>
+
+    <button (click)="goBack()">
+        &lsaquo; Go back
+        <!-- &lsaquo; = icône arrow back -->
+    </button>
+
+    <app-plant-form [detail]="plant" (update)="handlePlantUpdate($event)"></app-plant-form>
+
+</div>

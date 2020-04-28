@@ -1,0 +1,86 @@
+<form (ngSubmit)="onSubmit(form.value, form.valid)" #form="ngForm" novalidate>
+    <!-- Il faut s'assurer avant que form.value à bien la forme de l'interface Plant -->
+
+    <!-- {{detail |json}} -->
+
+    <!-- TODO select quel type de plante planter -->
+
+    <div>
+        Plant name:
+        <input type="text" name="name" [ngModel]="detail?.name" #name="ngModel" required minlength="2">
+        <!-- name = internal form's property name -->
+        <!-- QUESTION : ngModel -> permet de récup dynamiquement form.value -->
+        <!-- [ngModel] = "data"   -> data is in the input before inserting text -->
+
+        <div *ngIf="name.errors?.required && name.dirty" class="error">
+            <!-- .dirty means the form controls values as changes (on value change) -->
+            <!-- .touched means that the error will pop after the user left, and touch an other element than the input -->
+            Plant name is required
+        </div>
+        <div *ngIf="name.errors?.minlength && name.dirty" class="error">
+            <!-- multiple type of errors can be added -->
+            Plant's name has to contain more than 1 character
+        </div>
+    </div>
+
+    <!-- Cette div sert uniquement à avoir un formulaire de la forme Plant -->
+    <!-- TODO: voir comment ajouter des champs dans le formulaire sans insérer de input  -->
+    <div style="display: none;">
+        Plant ID:
+        <input type="number" name="id" [ngModel]="detail?.id">
+    </div>
+
+    <div>
+        Plant was planted
+
+        <!-- <label>
+            <input type="radio" [value]="true" name="planted" [ngModel]="detail?.planted" (ngModelChange)="togglePlanted($event)">
+            on met des crochets à value pour que la valeur soit passée en tant que boolean et non string 
+            Yes
+        </label>
+
+        <label>
+            <input type="radio" [value]="false" name="planted" [ngModel]="detail?.planted" (ngModelChange)="togglePlanted($event)">
+            No
+        </label> -->
+
+        <label>
+            <input type="checkbox" name="planted" [ngModel]="detail?.planted" (ngModelChange)="togglePlanted($event)">
+        </label>
+
+        <div *ngIf="form.value.planted">
+            Planted date :
+            <input type="number" name="plantedDate" [ngModel]="detail?.plantedDate">
+        </div>
+
+    </div>
+
+    <div *ngIf="form.value.planted">
+        Select action:
+        <!-- <select name="action" [ngModel]="detail?.action">
+            <option *ngFor="let item of plantActions" [value]="item.key" [selected]="item.key===detail?.action">
+                {{item.value}}
+            </option>
+        </select> -->
+        <!-- select enable to put the good initial value into the select component -->
+        <!-- but we still have to add ngModel to change the form value -->
+
+        <select name="action" [ngModel]="detail?.action">
+            <option *ngFor="let item of plantActions" [ngValue]="item.key">
+                <!-- ngValue enable us to pass attributes with type different than a string -->
+                {{item.value}}
+            </option>
+        </select>
+
+    </div>
+
+    <!-- <div [ngStyle]="{'background-color':'form'}" [ngStyle]="{ color: form.valid? 'green': 'red'}">
+        Form's value changed dynamically thanks to local #ref
+        {{ form.value | json}}
+    </div> -->
+
+    <button type="submit" [disabled]="form.invalid">
+        Update Plant
+    </button>
+
+</form>

@@ -1,0 +1,24 @@
+<div>
+    <h2>Pipe used into the DOM</h2>
+    <ul>
+        <li *ngFor="let file of files">
+            <p>{{file.name}}</p>
+            <p>{{file.size | fileSize:' Megabytes' }}</p>
+            <!-- 'Megabytes is a custom argument that we passed into the pipe' -->
+        </li>
+    </ul>
+
+    <h2>Pipe used as a provider/function</h2>
+    <ul>
+        <li *ngFor="let file of mapped">
+            <p>{{file.name}}</p>
+            <p>{{file.size}}</p>
+        </li>
+    </ul>
+
+    <div style="border:2px solid lightgreen;">
+        <p>This pipe transforms a file's size into a value in MB</p>
+        <p>'Megabytes' is an optional pipe input</p>
+    </div>
+
+</div>

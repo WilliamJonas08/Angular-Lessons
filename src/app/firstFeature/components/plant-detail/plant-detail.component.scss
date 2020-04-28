@@ -1,0 +1,12 @@
+.status{
+    width: 10px;
+    height:10px;
+    border-radius: 50%;
+    display: block;
+    float: left;
+    margin: 8px 10px 0 0;
+    background: red;
+    &.planted{
+        background: green;
+    }
+}

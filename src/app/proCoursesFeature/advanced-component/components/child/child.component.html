@@ -1,0 +1,27 @@
+<div>
+    <p style="font-size: large;">{{title}}</p>
+
+    <p><b>Did we receved content projection ?</b></p>
+
+    <!--  Data will be displayed here-->
+    <!-- The "select" attribute:
+        - enable us to choose which content we want to display in the current ng-content
+        - works with tags (button, pu,..), classes (.nav,...), id (#nav), components (component selector)
+    -->
+    <!-- Projection slots: -->
+    <ng-content select="p"></ng-content>
+    <ng-content select="button"></ng-content>
+    <ng-content select="binded-child"></ng-content>
+
+    <input type="text" #inputRef>
+
+
+    <!-- <div *ngIf="showMessage">
+        Contenu affiché dynamiquement grace à @ContentChild (qui actualise "showMessage")
+    </div>  -->
+    <!-- Nécessite d'importer le composant "binded component" dont on observe des données -->
+
+
+    <app-message [style.display]="(showMessage? 'inherit':'none')"></app-message>
+
+</div>

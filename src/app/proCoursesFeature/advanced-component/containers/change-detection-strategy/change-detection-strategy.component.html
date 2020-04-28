@@ -1,0 +1,15 @@
+<a routerLink="/pro-courses">Go back</a>
+
+<h1>Change Detection Strategy</h1>
+
+<button (click)="addProp()">Add Property</button>
+<button (click)="changeName()">Change name</button>
+<button (click)="changeUser()">Change all user object</button>
+
+<div class="examples">
+    <change-detection-example-one [user]="user"></change-detection-example-one>
+    <change-detection-example-two [user]="user"></change-detection-example-two>
+</div>
+
+<p>The first example uses the principe of immutable objects with the change detection strategy "onPush"</p>
+<p>A revoir </p>

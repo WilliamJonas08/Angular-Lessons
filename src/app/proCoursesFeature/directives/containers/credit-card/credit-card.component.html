@@ -1,0 +1,24 @@
+<div>
+    <h1>Building our own directive</h1>
+
+    <label>
+
+        <h3>Credit Card Number</h3>
+
+        <input name="credit-card" type="text" placeholder="Enter your 16-digit card number" credit-card>
+        <!-- A la fin on observe la référence à la directive [credit-card] -->
+
+    </label>
+    <label>
+        <!-- tooltip=value (@Input) -->
+
+        <p tooltip="3 digits, back of your card" #myToolTip="tooltipExported">Enter your security code <span (mouseover)="myToolTip.show()" (mouseout)="myToolTip.hide()"> (?) </span></p>
+        
+
+
+        <input type="text">
+
+    </label>
+
+    <p>Here we have covered custom input & tooltip apparition</p>
+</div>

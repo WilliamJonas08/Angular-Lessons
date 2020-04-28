@@ -1,0 +1,18 @@
+<a routerLink="/pro-courses">Go back</a>
+
+<h1>Dynamic Component generation</h1>
+
+<!-- Dynamic component generation -->
+<div #entry></div>
+<!-- PROBLEME: div générée en dessous des paragraphes -->
+
+<p>Here we don't access to the child Content inserted into the global container</p>
+<p>So we just access permanent structure of the child component</p>
+
+<button (click)="destroyComponent()">
+    Destroy
+</button>
+
+<button (click)="moveComponent()">
+    Move
+</button>

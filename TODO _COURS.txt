@@ -1,0 +1,45 @@
+FUNDAMENTAL LEVEL
+    À (re)voir
+    - Custom headers
+    - Observable.throw error handling
+    - [selected] still works ? (course 42)
+    - template ref ngModel
+    - méthode switchMap (incomprise)
+    - hash location strategy
+    - REVOIR router link pour faire des liens plus courts/propres
+
+    À tester:
+    .toPromise()
+
+
+PRO LEVEL
+
+    - AfterViewInit ( problème de cycle de vie car AfterContentInit ne semble pas pouvoir modifier la data)
+    - Renderer
+    - Génération dynamique d'un composant: 
+        - afterContentInit devrait permettre d'appeller la variable locale associée au view child sauf que cette dernière n'est pas encore définie ... elle est définie afterViewInit! 
+        - div générée bizarrement (pas dans l'ordre du html)
+        - Contrairement à ce que indiquait la vidéo, il n'y a plus besoin de référencer le composant généré dynamiquement, dans le ngModule
+    - ng-template embedded into a viewChild : 
+        - What is the utility ? (it creates "problems" of display under the viexChild container)
+    - ViewEncapsulation:
+        - Cannot generate shadow DOM (example2) ( même sur gg chrome)
+    -ChangeDetection:
+        - revoir un peu
+
+    - ExportAs:
+        - Problème de class  : tooltip--active (censé faire quoi ? + impossible de paramétrer le css par rapport à cette classe)
+    -> Quelle est l'utilité d'une directive par rapport aux méthodes que l'on pourrait écrire dans le component ?
+    
+    - Reactive forms:
+        - Rooting d'un module inséré dans le ProCoursesModule (qui est déja un module inséré dans le AppModule)
+
+    - Routing:
+        - Dynamic route resolves (REFAIRE)
+
+
+
+    Singleton : class qui englobe le static
+
+AUTRE
+json-server db.json

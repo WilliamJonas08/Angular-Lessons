@@ -1,0 +1,8 @@
+<a [routerLink]="[{outlets: { primary:[''], secondOutlet : [ 'detail' , plant?.id]} } ]">
+    <!-- '' : permet de dire qu'on l'on reste sur l'url /pro-courses/routing qui est la précédemment -->
+
+    <div class="item-container">
+        <p> {{plant?.name}}</p>
+    </div>
+
+</a>

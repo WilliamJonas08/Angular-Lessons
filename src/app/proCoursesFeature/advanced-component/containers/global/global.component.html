@@ -1,0 +1,19 @@
+<div>
+
+    <!-- mettre un slash dans l'url remplace tout l'url actuel par celui écris alors que juste écrire dynamicgen ajoutera dynamicgen après pro-courses -->
+    <!-- <a routerLink="dynamicgen">Dynamic generation of child-component</a>
+    <a routerLink="ngtemplate">Ng Template</a>
+    <a routerLink="viewencapsulation">View Encapsulation</a>
+    <a routerLink="changedetection">Change Detection</a> -->
+
+    <h1>Child Content</h1>
+
+    <child-component>
+        <!-- Need to insert an ng-content tag in the chil to get the content below -->
+        <!-- All the data inside the child-component tag is called "Child content" -->
+        <p>Here is content projected into a child component</p>
+        <binded-child (checked)="handleCheck($event)"></binded-child>
+        <button> Projected button</button>
+    </child-component>
+
+</div>

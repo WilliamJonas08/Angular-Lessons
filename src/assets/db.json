@@ -1,0 +1,88 @@
+{
+  "plants": [
+    {
+      "name": "Potato",
+      "id": 1,
+      "planted": true,
+      "plantedDate": 1490752000000,
+      "action": "water"
+    },
+    {
+      "id": 2,
+      "name": "Strawberries",
+      "planted": false,
+      "action": "none"
+    },
+    {
+      "id": 3,
+      "name": "Radish",
+      "planted": true,
+      "plantedDate": 1440752005000,
+      "action": "water"
+    },
+    {
+      "id": 4,
+      "name": "Carrot",
+      "planted": false,
+      "action": "none"
+    },
+    {
+      "id": 5,
+      "name": "Salad",
+      "planted": true,
+      "plantedDate": 1440752089000,
+      "action": "water"
+    }
+  ],
+  "cart": [
+    {
+      "product_id": 1,
+      "quantity": 20
+    },
+    {
+      "product_id": 4,
+      "quantity": 20
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "price": 50,
+      "name": "Potato"
+    },
+    {
+      "id": 2,
+      "price": 50,
+      "name": "Radish"
+    },
+    {
+      "id": 3,
+      "price": 400,
+      "name": "Beautiful Dog"
+    },
+    {
+      "id": 4,
+      "price": 900,
+      "name": "Big Carrot"
+    },
+    {
+      "id": 5,
+      "price": 2500,
+      "name": "Golden Potato"
+    }
+  ],
+  "branches": [
+    {
+      "id": "A123"
+    },
+    {
+      "id": "B123"
+    },
+    {
+      "id": "C123"
+    },
+    {
+      "id": "D123"
+    }
+  ]
+}

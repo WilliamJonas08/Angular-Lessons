@@ -1,0 +1,15 @@
+<div class="songs-list">
+    <h3>
+        <ng-content></ng-content>
+    </h3>
+
+    <ul>
+        <li *ngFor="let item of list, let i=index">
+            <p>{{item.name}}</p>
+            <span>{{ item.plantedDate ? (item.plantedDate | date: "d MMMM y" | uppercase) : "Plant not planted already" }}</span>
+            <div class="songs-list__favourite" [class.active]="item.action !=='none'" (click)="toggleItem(i,'action')"></div>
+            <div class="songs-list__listened" [class.active]="item.planted" (click)="toggleItem(i,'planted')"></div>
+        </li>
+    </ul>
+
+</div>

@@ -1,0 +1,16 @@
+<div class="body">
+    <h2>State-management RXJS</h2>
+
+    <!-- METHODE : | async permet de gérer le fait qu'il s'agisse d'un observable (semble le transporemr en un array!)-->
+    <!-- PROBLEME : voir comment ça marche alors qu'il n'a pas subscribe l'observable -->
+    <!-- <div *ngFor="let todo of todos$ |async  ">
+        {{todo.name}}
+    </div> -->
+
+    <div style="display : flex">
+        <app-songs-playlist></app-songs-playlist>
+        <app-songs-listened></app-songs-listened>
+        <app-songs-favourites></app-songs-favourites>
+    </div>
+
+</div>

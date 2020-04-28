@@ -1,0 +1,115 @@
+<p>rendering-flows works!</p>
+
+<button (click)="ngif=!ngif">{{ngif? "Hide ngIf Lesson" : "Show ngIf Lesson"}}</button>
+<button (click)="ngfor=!ngfor">{{ngfor? "Hide ngFor Lesson" : "Show ngFor Lesson"}}</button>
+<button (click)="ngclass=!ngclass">{{ngclass? "Hide ngClass Lesson" : "Show ngClass Lesson"}}</button>
+<button (click)="ngstyle=!ngstyle">{{ngstyle? "Hide ngStyle Lesson" : "Show ngStyle Lesson"}}</button>
+<button (click)="pipe=!pipe">{{pipe? "Hide pipe Lesson" : "Show pipe Lesson"}}</button>
+<button (click)="safe=!safe">{{safe? "Hide Safe Navigation Lesson" : "Show Safe Nafigation Lesson"}}</button>
+
+<div *ngIf="ngif">
+    <h1>
+        *ngIf syntax
+    </h1>
+
+    <button (click)="changeCondition()">
+        {{myCondition? "Cacher": "Afficher"}}
+    </button>
+    <div *ngIf="myCondition">
+        Coucou
+    </div>
+
+    <!-- Identique -->
+    <ng-template [ngIf]="myCondition">
+        Coucou
+    </ng-template>
+
+</div>
+
+<div *ngIf="ngfor">
+    <h1>
+        ngFor & iteration collections
+    </h1>
+
+    <h2> Les plantes du potager</h2>
+    <ul>
+        <li *ngFor="let plant of plants; let i=index">
+            <!-- <p *ngIf="plant.planted"> -->
+            {{i}} : {{plant.name}}
+            <!-- </p> -->
+        </li>
+    </ul>
+
+    <!-- Autre version avec fonctionnement identique -->
+    <!-- <ng-template ngfor let-plant let-i="index" [ngForOf]="plants">
+        {{i}} : {{plant.name}}
+    </ng-template> -->
+
+</div>
+
+<div *ngIf="ngclass">
+    <h1>
+        ngClass and className bindings
+    </h1>
+
+    <h2> Les plantes du potager</h2>
+    <ul>
+        <li *ngFor="let plant of plants; let i=index">
+            <span class="status" [class.planted]="plant.planted"></span>
+            <!-- 2nd solution can enable multiple classes -->
+            <!-- <span class="status" [ngClass]="{ 'planted': plant.planted}"></span> -->
+            {{i}} : {{plant.name}}
+        </li>
+    </ul>
+</div>
+
+<div *ngIf="ngstyle">
+    <h1>
+        ngStyle and style bindings
+    </h1>
+
+    <h2> Les plantes du potager</h2>
+    <ul>
+        <li *ngFor="let plant of plants; let i=index">
+            <span class="status" [style.backgroundColor]="plant.planted? 'green': 'red'"></span>
+            <!-- 2nd solution can enable multiple styles -->
+            <!-- <span class="status" [ngStyle]="{ 
+                backgroundColor: plant.planted? 'green': 'red'
+            }"></span> -->
+            {{i}} : {{plant.name}}
+        </li>
+    </ul>
+</div>
+
+<div *ngIf="pipe">
+    <h1>
+        Pipes for data transformation
+    </h1>
+
+    <h2> Les plantes du potager</h2>
+    <ul>
+        <li *ngFor="let plant of plants; let i=index">
+            <span class="status" [style.backgroundColor]="plant.planted? 'green': 'red'"></span>
+            <p>
+                {{i}} : {{plant.name}}
+            </p>
+            <p>
+                Planted date : {{ plant.plantedDate ? (plant.plantedDate | date: "d MMMM y" | uppercase) : "Plant not planted already" }}
+            </p>
+
+        </li>
+    </ul>
+</div>
+
+<div *ngIf="safe">
+    <h1>
+        Safe navigation operator
+    </h1>
+
+    <p>We have an array and we want to evaluate his length.</p>
+    <p>If we want to display if, it could throw an errow sometimes because we can't evaluate the length of null (in the case where there is no array)</p>
+    <p> We should write: 
+         {{ plant.numberOfSpilledGerms<b>?</b>.length || 0}}
+    </p>
+
+</div>

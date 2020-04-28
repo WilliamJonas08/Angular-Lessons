@@ -1,0 +1,19 @@
+<h2>Routing</h2>
+
+<div style="display: flex;">
+
+    <div class="buttons">
+        <routing-buttons (clicked)="buttonClicked($event)"></routing-buttons>
+    </div>
+
+    <div class="list">
+        <!-- <ng-template > -->
+            <app-one *ngFor="let plant of plants" [plant]="plant"></app-one>
+        <!-- </ng-template> -->
+    </div>
+
+    <div class="second-outlet">
+        <!-- <router-outlet name="secondOutlet"></router-outlet> -->
+    </div>
+
+</div>

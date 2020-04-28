@@ -1,0 +1,15 @@
+<p>Rooting test with auxiliary outlets</p>
+<div style="display: flex;">
+    <div style="width: 33%;">
+        <button (click)="one()">Planted</button>
+        <button (click)="two()">Not planted</button>
+    </div>
+
+    <div style="width: 33%;">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div style="width: 33%;">
+        <router-outlet name="secondRouter"></router-outlet>
+    </div>
+</div>

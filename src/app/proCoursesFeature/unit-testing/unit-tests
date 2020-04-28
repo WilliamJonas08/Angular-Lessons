@@ -1,0 +1,22 @@
+Where to find those unit tests
+
+Pipes
+    pipes > file-size.pipe
+
+Service
+    reactive forms > service > StockInventoryService
+
+Component
+    reactive-forms > component > stock-counter
+
+Inputs/outputs
+    reactive-forms > component > stock-counter
+
+Templates
+    reactive-forms > component > stock-counter
+
+Containers with async providers
+    reactive-forms > containers > stock-inventory
+
+Directives
+    directives > credit-card

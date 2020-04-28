@@ -1,0 +1,19 @@
+<p>component-architecture-and-feature-modules works!</p>
+
+<!-- QUESTION  :Pourquoi faire remonter la data dans l'architecture par des event emitters plutot que par l'intermediaire du service ? -->
+<!-- QUESTION : Quelle est la "portée" des ancres ? (#) -->
+<!-- QUESTION : Pourquoi importer des modules dans le firstFeatureModule si c'est pour les réimporter dans les composants alors que on pourrait les importer uniquement dans les composants ?-->
+
+<h2> Garden overview </h2>
+<!-- Ici on insère de l'information (item) dans le childComponent (presentational component) -->
+<app-plant-count [items]="plants"></app-plant-count>
+
+<div *ngFor="let detail of plants">
+
+        {{detail.name}}
+
+</div>
+
+<h2> Plants in our garden </h2>
+
+<app-plant-detail *ngFor="let plant of plants" [detail]="plant" (edit)="handleEdit($event)" (remove)="handleRemove($event)" (view)="handleView($event)"></app-plant-detail>

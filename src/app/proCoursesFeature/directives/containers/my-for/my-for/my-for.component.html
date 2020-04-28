@@ -1,0 +1,37 @@
+<div>
+    <h2> Default Directive ngFor</h2>
+    <span>
+        <ul>
+            <li *ngFor="let item of items; let i=index">
+                {{i}} : {{item.name}}
+            </li>
+        </ul>
+    </span>
+    <span>
+        <ul>
+            <ng-template ngFor [ngForOf]="items" let-item let-i="index">
+                <li>
+                    {{i}} : {{item.name}}
+                </li>
+            </ng-template>
+        </ul>
+    </span>
+
+    <h2> Custom directive myFor</h2>
+    <span>
+        <ul>
+            <li *myFor='let item of items, let i=index'>
+                {{i}} : {{item.name}}
+            </li>
+        </ul>
+    </span>
+    <span>
+        <ul>
+            <ng-template myFor [myForOf]="items" let-item let-i=index>
+                <li>
+                    {{i}} : {{item.name}}
+                </li>
+            </ng-template>
+        </ul>
+    </span>
+</div>

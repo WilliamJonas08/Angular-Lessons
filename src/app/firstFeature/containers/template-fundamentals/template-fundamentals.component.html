@@ -1,0 +1,57 @@
+<p>template-fundamentals works!</p>
+
+<div>
+    <h1>
+        Event Binding
+    </h1>
+
+    <div>
+        <h2>Input detection</h2>
+        <input type="text" (input)="onInput($event)">
+    </div>
+
+    <div>
+        <h2>Blur detection</h2>
+        <input type="text" (blur)="onUnFocus($event)">
+    </div>
+
+    <div>
+        <h2>Click detection </h2>
+        <button (click)="onClick()">Update Result to "Null"</button>
+    </div>
+
+    <div>
+        <p><b>Result :</b></p>
+        {{result}}
+    </div>
+</div>
+
+<div>
+    <h1>
+        Two Way Binding
+    </h1>
+
+    <h2>One way with change detection</h2>
+    <input type="text" [ngModel]="clickValue1" (ngModelChange)="handleChange($event)">
+    <p>InputValue: {{ clickValue1}}</p>
+    <p> (aucun résultat car pas de maj instantanée)</p>
+    <p><b>Result :</b> {{result2}}</p>
+    <p>Cependant le résultat est actualisé lors de la détection d'un changement</p>
+
+    <h2>Two way</h2>
+    <input type="text" [(ngModel)]="clickValue2">
+    <p>InputValue: {{ clickValue2}}</p>
+    <p>(maj instantannée)</p>
+
+</div>
+
+<div>
+    <h1>
+        Template #References
+    </h1>
+    <p>It give access to particular DOM element and its properties that are implicitly exported</p>
+
+    <button (click)="getValue(myReference.value)"> Get input Value </button>
+    <input type="text" #myReference>
+    <p>Result: {{result3}}</p>
+</div>

@@ -1,0 +1,23 @@
+
+
+providers / use value
+    - procourses module
+    - stock inventory service (injecting api string from our pro module file)
+
+injection token
+    - token.ts
+    -> intermédiaire de notation qui permet d'éviter les conflits de noms notamment
+
+providers / use class
+    - stockInventoryComponent
+
+providers / useFactory
+    - dependencyInjectionComponent
+
+providers / useExisting
+    - dependencyInjectionComponent
+
+configurable ngModule
+    - proCourses module & app module
+
+ngZone: Revoir ?

@@ -1,0 +1,28 @@
+
+        <span class="status" [style.backgroundColor]="detail.planted? 'green': 'red'"></span>
+
+        <div *ngIf="editMode">
+            <input type="text" [value]="detail.name" (input)="onNameChange(name.value)" #name>
+        </div>
+
+        <div *ngIf="!editMode">
+            {{detail.name}}
+        </div>
+
+        <button (click)="toggleEditMode()">
+            {{ editMode? "Done" : "Edit"}}
+        </button>
+
+        <button (click)="removePlant()">
+            {{ "Remove"}}
+        </button>
+
+        <button (click)="goToPlant()">
+           View
+        </button>
+
+        <p>
+            Planted date :
+            {{ detail.plantedDate ? (detail.plantedDate | date: "d MMMM y" | uppercase) : "Plant not planted already" }}
+        </p>
+

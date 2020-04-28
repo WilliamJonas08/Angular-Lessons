@@ -1,0 +1,49 @@
+<!-- <ng-template #template>
+    Données du template à insérer
+</ng-template> -->
+<!-- Also works when you put the ng-template before the button because it will display it inside the #entry div -->
+
+<a routerLink="/pro-courses">Go back</a>
+
+<h1>Ng Template</h1>
+
+<p>Il y a un décalage spatial entre les templates insérés et leurs containers ...</p>
+
+<!-- 
+    TEMPLATE INJECTION VIA API
+ -->
+
+<div #entry style="background-color: lightskyblue;">
+    <p>Div with #entry ref</p>
+</div>
+
+<!-- Attention à bien utiliser ng-template et non plus template -->
+<ng-template #template let-IMPLICIT_ATTRIBUTE_NAME let-data="data">
+    <div style="background-color: lightblue;">
+        <p>Template injected via the #entry div</p>
+        <p>
+            Données du template à insérer:
+            {{IMPLICIT_ATTRIBUTE_NAME}} : {{ data }}
+        </p>
+    </div>
+</ng-template>
+
+
+<!-- 
+    TEMPLATE INJECTION VIA DOM ELEMENT
+ -->
+
+<!-- The element with the #ref template2 will be displayed inside this ng-container -->
+<ng-container [ngTemplateOutlet]="template2" [ngTemplateOutletContext]="context"></ng-container>
+
+<ng-template #template2 let-IMPLICIT_ATTRIBUTE_NAME2 let-data2="data">
+    <div style="background-color: lightcoral;">
+        <p>Template injected via a DOM element</p>
+        <p>
+            Données du template à insérer:
+            {{IMPLICIT_ATTRIBUTE_NAME2}} : {{ data2 }}
+        </p>
+    </div>
+</ng-template>
+
+
